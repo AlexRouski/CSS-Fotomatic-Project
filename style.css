@@ -1,0 +1,530 @@
+/* Universal styles */
+:root {
+  --clr-primary: #4a4a4a;
+  --clr-neutral-100: #fff;
+  --clr-geen: #9dc20b;
+
+  --ff-primary: "Roboto", sans-serif;
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* border: 1px solid red !important; */
+}
+
+/* is this can be rigth to avoid blank spaces to the right in responsive mode?  */
+
+/* html,
+body {
+  overflow-x: hidden;
+} */
+
+body {
+  color: var(--clr-primary);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-regular);
+}
+
+body,
+ul,
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+  font-weight: var(--fw-regular);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--clr-primary);
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+q::before,
+q::after {
+  content: none;
+}
+
+/* Desktop Header section */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: white;
+  padding: 0 1.875rem;
+  color: #4a4a4a;
+}
+
+.split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5.3125rem;
+}
+
+.logo {
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 1.5rem;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li:not(:first-child) {
+  margin-left: 3.75rem;
+}
+
+.icon {
+  margin-left: 0.25rem;
+  vertical-align: middle;
+  width: 1.25rem;
+}
+
+.mobile {
+  display: none;
+}
+
+.join-us-button {
+  display: none;
+}
+
+/* Tablet Header section 760px */
+@media screen and (max-width: 47.5rem) {
+  header {
+    padding: 0 0.9375rem 0 1.875rem;
+  }
+
+  .join-us-button {
+    display: inline-block;
+    color: var(--clr-neutral-100);
+    background-color: var(--clr-geen);
+    font-size: 1rem;
+    padding: 0.1875rem 0.5rem;
+    border-radius: 0.25rem;
+    border: none;
+    max-width: 4.25rem;
+  }
+
+  /* why flex 1 0 auto in order to stop items shrinking(stop working)? and what is the right way?*/
+  nav ul {
+    min-width: 25.8125rem;
+    /* flex: 1 0 auto; */
+  }
+
+  nav li:not(:last-child) {
+    margin-left: 0;
+    margin-right: 0.9375rem;
+  }
+
+  nav li:not(:last-child, :first-child) {
+    margin-left: 0.9375rem;
+  }
+
+  nav li:last-child {
+    margin-left: 0;
+  }
+}
+
+/* Mobile Header section  */
+
+@media screen and (max-width: 28.125rem) {
+  header {
+    padding: 0 0.9375rem;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .mobile ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    min-width: 16rem;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .desktop {
+    display: none;
+  }
+}
+
+/* Desktop section main-content */
+
+.sign-up-section-mobile {
+  display: none;
+}
+
+.main-content {
+  position: relative;
+  top: 5.3125rem;
+}
+
+.container-bg {
+  background-image: url("./images/banner-landingpage.jpg");
+  height: 45rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sign-up-section {
+  width: 37rem;
+  display: inline-block;
+  position: relative;
+  top: 10.625rem;
+  left: 6.25rem;
+  color: #fff;
+  background-color: var(--clr-geen);
+  padding: 3.5rem 5rem;
+  text-align: center;
+  border: 1px solid #979797;
+  border-radius: 0.25rem;
+}
+
+.main-content .content {
+  overflow: hidden;
+  width: 100%;
+}
+
+.damion-cursive {
+  font-family: "Damion", cursive;
+  font-size: 2.25rem;
+  font-weight: var(--fw-regular);
+}
+
+.rubik {
+  font-family: "Rubik", sans-serif;
+  font-size: 3.125rem;
+  text-transform: uppercase;
+  line-height: 1.4;
+  padding-bottom: 0.75rem;
+  /* why not margin-bottom? */
+  /* margin-bottom: 0.75rem; */
+}
+
+.email-us {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  padding-bottom: 1.625rem;
+}
+
+.join-list-btn {
+  margin: 0 auto;
+  width: 25.5rem;
+  height: 4rem;
+  background-color: var(--clr-primary);
+  border-radius: 0.25rem;
+  font-family: "Roboto", medium;
+  font-size: 1.25rem;
+  padding: 1.375rem;
+}
+/* Tablet sign-up section  */
+@media screen and (max-width: 47.5rem) {
+  .sign-up-section {
+    display: none;
+  }
+
+  .container-bg {
+    height: 22rem;
+  }
+
+  .sign-up-section-mobile {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--clr-neutral-100);
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 28.125rem) {
+  .main-content {
+    position: relative;
+    top: 3rem;
+  }
+
+  .container-bg {
+    background-position: right;
+    height: 22.5rem;
+  }
+}
+
+/* Desktop Features section  */
+
+.features-section {
+  position: relative;
+  top: 5.3125rem;
+  background-color: #f3f3f3;
+}
+
+.features-container {
+  padding: 4rem 3rem 2.875rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.feature-box {
+  background-color: var(--clr-neutral-100);
+  padding: 2rem 0;
+  margin: 0 1.1875rem;
+}
+
+.feature-box img {
+  width: 100%;
+  height: 65%;
+}
+
+.feature {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.features-section .content {
+  margin-top: 2.5rem;
+  padding: 0 2rem;
+}
+
+.features {
+  font-weight: var(--fw-bold);
+  font-size: 2.25rem;
+  color: var(--clr-primary);
+  line-height: 1.2;
+  padding-bottom: 0.25rem;
+}
+
+.description {
+  font-weight: var(--fw-light);
+  color: var(--clr-primary);
+  line-height: 1.2;
+}
+
+/* Tablet Features section  */
+@media screen and (max-width: 47.5rem) {
+  .features-container {
+    padding: 1.25rem 0.5rem;
+  }
+
+  .feature-box {
+    padding: 1rem 0;
+    margin: 0 0.5rem;
+  }
+
+  .features-container .content {
+    margin-top: 1rem;
+    padding: 0;
+    text-align: left;
+  }
+}
+
+/* Mobile Features section  */
+@media screen and (max-width: 28.125rem) {
+  .features-section {
+    position: relative;
+    top: 3rem;
+  }
+
+  .features-container {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .feature-box {
+    margin: 0;
+    /* background-color: #9b9b9b; */
+  }
+
+  .features-container .content {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .content h2 {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    padding-bottom: 0.5rem;
+  }
+
+  .content p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    /* 30 - 16(1rempadding of box) / 16  */
+    padding-bottom: 0.875rem;
+  }
+
+  .grey {
+    background-color: #9b9b9b;
+  }
+}
+
+/* Desktop Filters section  */
+
+.filters-section {
+  position: relative;
+  top: 5.3125rem;
+  background-color: var(--clr-primary);
+}
+
+.filters-container {
+  padding: 4rem 1%;
+}
+
+.filters-section .content {
+  text-align: center;
+  color: var(--clr-neutral-100);
+  padding: 0 0 4rem 0;
+  width: 42%;
+  margin: 0 auto;
+}
+
+.filters-section h2 {
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+  padding-bottom: 0.25rem;
+}
+
+.filters-section p {
+  font-weight: var(--fw-light);
+}
+
+.images-container {
+  display: flex;
+}
+
+.images-container img {
+  width: 25%;
+  height: auto;
+}
+
+/* Tablet Filters section  */
+@media screen and (max-width: 47.5rem) {
+  .filters-section .content {
+    width: 100%;
+  }
+
+  .filters-container {
+    padding: 4rem 1% 0;
+  }
+}
+
+/* Mobile Filters section  */
+@media screen and (max-width: 28.125rem) {
+  .filters-section {
+    position: relative;
+    top: 3rem;
+  }
+
+  .filters-container {
+    padding: 2rem 0 0;
+  }
+
+  .filters-container .content {
+    /* padding: 0 2rem 1rem; */
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+/* Desktop Quotes section  */
+
+.quotes-section {
+  position: relative;
+  top: 5.3125rem;
+}
+
+.quotes-container {
+  background-color: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  padding: 5rem 1.875rem;
+}
+
+.quotes-container .content {
+  font-family: "Palatino", sans-serif;
+  font-style: italic;
+  font-size: 1.875rem;
+  line-height: 1.1;
+  padding-right: 1.875rem;
+}
+
+/* Mobile Quotes section  */
+
+@media screen and (max-width: 28.125rem) {
+  .quotes-section {
+    position: relative;
+    top: 3rem;
+  }
+
+  .quotes-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1.875rem;
+  }
+
+  .quotes-container .content {
+    width: 100%;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    text-align: center;
+    padding: 0 0 1rem;
+    overflow: hidden;
+  }
+  .quotes-container .image-container {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+/* Desktop Footer section  */
+
+footer {
+  position: relative;
+  top: 5.3125rem;
+}
+
+.footer-container {
+  background-color: #9b9b9b;
+  color: var(--clr-neutral-100);
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+/* Mobile Footer section  */
+
+@media screen and (max-width: 28.125rem) {
+  footer {
+    position: relative;
+    top: 3rem;
+  }
+
+  .footer-container {
+    overflow: hidden;
+  }
+
+  .footer-container span {
+    font-size: 0.625rem;
+  }
+}
